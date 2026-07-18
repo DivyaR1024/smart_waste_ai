@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Result</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Smart Waste AI Result</h1>
+
+<img src="{{ url_for('static', filename='uploads/' + image) }}"
+width="300">
+
+<hr>
+
+<h2>Detected Material</h2>
+
+<p>{{ materials[0] }}</p>
+
+<hr>
+
+<h2>Generated Ideas</h2>
+
+<ul>
+
+{% for idea in ideas %}
+
+<li>{{ idea }}</li>
+
+{% endfor %}
+
+</ul>
+
+<hr>
+
+<h2>{{ project.title }}</h2>
+
+<h3>Difficulty</h3>
+
+<p>{{ project.difficulty }}</p>
+
+<h3>Steps</h3>
+
+<ol>
+
+{% for step in project.steps %}
+
+<li>{{ step }}</li>
+
+{% endfor %}
+
+</ol>
+
+<h3>Tools</h3>
+
+<ul>
+
+{% for tool in project.tools %}
+
+<li>{{ tool }}</li>
+
+{% endfor %}
+
+</ul>
+
+<hr>
+
+<h3>Eco Score</h3>
+
+<p>{{ project.eco_score }}</p>
+
+<h3>CO₂ Saved</h3>
+
+<p>{{ project.co2_saved }} kg</p>
+
+<h3>Estimated Cost</h3>
+
+<p>₹ {{ project.estimated_cost }}</p>
+
+<h3>Selling Price</h3>
+
+<p>₹ {{ project.selling_price }}</p>
+
+<h3>Profit</h3>
+
+<p>₹ {{ project.profit }}</p>
+
+<h3>Marketplace</h3>
+
+<p>{{ project.marketplace }}</p>
+
+<h3>Reason</h3>
+
+<p>{{ project.reason }}</p>
+
+<br><br>
+
+<a href="/">⬅ Upload Another Image</a>
+
+</div>
+
+</body>
+
+</html>

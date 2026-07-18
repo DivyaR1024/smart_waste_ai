@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Smart Waste AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>♻ Smart Waste AI</h1>
+
+<p>Upload a waste image to generate eco-friendly reuse ideas.</p>
+
+<form action="/analyze"
+      method="POST"
+      enctype="multipart/form-data">
+
+<input
+type="file"
+name="image"
+accept="image/*"
+required>
+
+<br><br>
+
+<img id="preview" width="250">
+
+<br><br>
+
+<button type="submit">
+
+Generate Ideas
+
+</button>
+
+</form>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
